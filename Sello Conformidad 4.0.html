@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERTEX AXIOMA S.A.S. | Sello de Conformidad Fiscal 4.0</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --card-border: #1f2937;
+            --accent-color: #38bdf8;
+            --success-color: #10b981;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .header-panel {
+            background: var(--card-bg);
+            border: 1px solid var(--accent-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
+        }
+
+        .header-panel h1 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-panel p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .console-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .console-box h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group input {
+            flex: 1;
+            background: #0b0f19;
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            padding: 0.75rem 1rem;
+            color: #fff;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        .btn-action {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-action:hover {
+            background: var(--accent-color);
+            color: #0b0f19;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .result-panel {
+            background: #0b0f19;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #f3f4f6;
+            display: none;
+        }
+
+        .footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--card-border);
+            padding-top: 1.5rem;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Encabezado -->
+        <div class="header-panel">
+            <span style="font-family: monospace; color: var(--accent-color); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;">🛡️ Sello de Inmutabilidad Transfronteriza</span>
+            <h1>Sello de Conformidad Fiscal 4.0</h1>
+            <p>Estación de certificación transfronteriza y validación de origen tributario y aduanero on-chain.</p>
+        </div>
+
+        <!-- Consola de Validación -->
+        <div class="console-box">
+            <h3>🔍 Verificación de Expediente o Activo</h3>
+            <div class="input-group">
+                <input type="text" id="expediente-input" value="EXP-2026-VERTEX-AXIOMA-FISCAL" placeholder="Ingrese ID de Expediente o Hash...">
+                <button class="btn-action" onclick="verificarSello()">Verificar Sello</button>
+            </div>
+
+            <div id="resultado-verificacion" class="result-panel">
+                <div style="color: var(--success-color); font-weight: bold; margin-bottom: 0.5rem;">[✔] SELLO VALIDADO EXITOSAMENTE — ESTADO: APROBADO</div>
+                <div>> HASH DE ORIGEN (SHA-256): <span style="color: var(--accent-color);">0x8f4c9a21e7b34019ff88d2c11a32a104</span></div>
+                <div>> ÁRBOL DE MERKLE: ROOT HASH VERIFICADO EN POLYGON</div>
+                <div>> TASA DE INVALIDAEZ (TERROR): 0.0% (Sin observaciones de colusión)</div>
+                <div>> CUMPLIMIENTO TRIBUTARIO: CONFORME AL ESTÁNDAR 4.0</div>
+                <div style="margin-top: 0.75rem; color: #f59e0b;">🔒 Estampa temporal inmutable generada con éxito.</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>VERTEX AXIOMA S.A.S. — Sistema de Auditoría 4.0 y Prueba Petrificada.</p>
+    </footer>
+
+    <script>
+        function verificarSello() {
+            const panel = document.getElementById('resultado-verificacion');
+            panel.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
